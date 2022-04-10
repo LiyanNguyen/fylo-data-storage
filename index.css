@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+
+:root {
+	--gradient: linear-gradient(90deg, hsl(6, 100%, 80%), hsl(335, 100%, 65%));
+	--paleBlue: hsl(243, 100%, 93%);
+	--grayishBlue: hsl(229, 7%, 55%);
+	--darkBlue: hsl(228, 56%, 26%);
+	--veryDarkBlue: hsl(229, 57%, 11%);
+
+	font-size: 14px;
+	font-family: 'Raleway', sans-serif;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	min-height: 100vh;
+	background-color: var(--veryDarkBlue);
+	background-image: url(images/bg-desktop.png);
+	background-repeat: no-repeat;
+	background-position: center bottom;
+	background-size: 100% 52%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+main {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: flex-end;
+	gap: 2.5rem;
+	height: 15.7rem;
+	width: 70rem;
+	margin-bottom: 1.7rem;
+}
+
+.left-card {
+	width: 40%;
+	height: 100%;
+	background-color: var(--darkBlue);
+	border-radius: 1rem 8rem 1rem 1rem;
+	padding: 3rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.logo {
+	width: 50%;
+}
+
+.bottom-icon-container {
+	display: flex;
+	gap: 1rem;
+}
+
+.bottom-icon-container div {
+	background-color: var(--veryDarkBlue);
+	width: 3.8rem;
+	height: 3.8rem;
+	border-radius: 1rem;
+}
+
+.bottom-icon-1 {
+	background-image: url(images/icon-document.svg);
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.bottom-icon-2 {
+	background-image: url(images/icon-folder.svg);
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.bottom-icon-3 {
+	background-image: url(images/icon-upload.svg);
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.right-card {
+	width: 60%;
+	height: 75%;
+	background-color: var(--darkBlue);
+	border-radius: 1rem;
+	padding: 3rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	color: var(--paleBlue);
+	position: relative;
+}
+
+#storage-popup {
+	position: absolute;
+	top: -3rem;
+	right: 3rem;
+	width: 14rem;
+	height: 5rem;
+	border-radius: 1rem;
+	background-color: white;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: .5rem;
+}
+
+.triangle-bottom-right {
+	position: absolute;
+	bottom: -1.5rem;
+	right: 0;
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 0 2.5rem 2.5rem 0;
+	border-color: transparent white transparent transparent;
+}
+
+#storage-popup strong {
+	font-size: 3rem;
+	color: var(--veryDarkBlue);
+}
+
+#storage-popup p {
+	color: var(--grayishBlue);
+	text-transform: uppercase;
+	font-weight: 700;
+}
+
+.right-card h1 {
+	font-weight: 400;
+	font-size: 1rem;
+}
+
+.right-card h1 span {
+	font-weight: 700;
+}
+
+#progressBar {
+	width: 100%;
+	height: 1.5rem;
+	background-color: #151f46;
+	border-radius: 1rem;
+	display: flex;
+	align-items: center;
+}
+
+#current-storage {
+	position: relative;
+	left: .3rem;
+	width: 81.5%;
+	height: 1rem;
+	background: var(--gradient);
+	border-radius: 1rem;
+	display: flex;
+	align-items: center;
+}
+
+#white-circle {
+	position: relative;
+	left: calc(100% - 1rem);
+	height: .8rem;
+	width: .8rem;
+	background-color: white;
+	border-radius: 1rem;
+}
+
+.right-card-bottom {
+	display: flex;
+	justify-content: space-between;
+}
+
+.right-card-bottom p {
+	font-weight: 700;
+}
+
+@media screen and (max-width: 800px) {
+	body {
+		background-image: url(images/bg-mobile.png);
+		background-position: initial;
+		background-size: cover;
+	}
+
+	main {
+		flex-direction: column;
+		gap: 1rem;
+		height: 15.7rem;
+		width: 90vw;
+	}
+
+	.left-card {
+		height: auto;
+		width: 100%;
+		gap: 2.5rem;
+	}
+
+	.right-card {
+		height: auto;
+		gap: 1rem;
+		width: 100%;
+	}
+
+	.right-card h1 {
+		text-align: center;
+	}
+
+	#storage-popup {
+		top: initial;
+		bottom: -3rem;
+		right: 4.8rem;
+	}
+	
+	.triangle-bottom-right {
+		display: none;
+	}
+}
